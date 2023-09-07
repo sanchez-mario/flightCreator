@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title="Create a Flight!">
+        <div class="slds-p-around_medium">
+            <c-custom-lookup search-placeholder="Search Departure Airport" field-label="Departure Airport" icon-name="custom:custom20" onlookupselected={handleDepartureChange} onlookupdeleted={handleDepartureDelete} class="customLookup"> </c-custom-lookup>
+            <c-custom-lookup search-placeholder="Search Arrival Airport" field-label="Arrival Airport" icon-name="custom:custom20" onlookupselected={handleArrivalChange} onlookupdeleted={handleArrivalDelete} class="customLookup"> </c-custom-lookup>
+
+            <lightning-button label="Save Flight" onclick={saveFlight}></lightning-button>
+        </div>
+        <div class="slds-p-around_medium">
+            <p>Departure Airport: {departureAirportName}</p>
+            <p>Arrival Airport: {arrivalAirportName}</p>
+            <p>Flight Distance: {flightDistance} kilometers</p>
+        </div>
+    </lightning-card>
+</template>
